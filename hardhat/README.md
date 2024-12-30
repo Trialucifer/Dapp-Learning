@@ -3,18 +3,18 @@
 
 # Creat Hardhat Project
 
-> mkdir hardhat-project
-> cd hardhat-project
-> npm init -y
-> npm install hardhat --save-dev
-> npx hardhat init
+> mkdir hardhat-project  
+> cd hardhat-project  
+> npm init -y  
+> npm install hardhat --save-dev  
+> npx hardhat init  
 
-> 安装第三方合约
-> npm install @chainlink/contracts --save-dev
-> npm install @openzeppelin/contracts —save-dev
+> 安装第三方合约  
+> npm install @chainlink/contracts --save-dev  
+> npm install @openzeppelin/contracts —save-dev  
 
-> 编译contracts下面的所有合约
-> npx hardhat compile
+> 编译contracts下面的所有合约  
+> npx hardhat compile  
 
 # 网络&私钥配置
 
@@ -77,6 +77,21 @@ npm install --save-dev hardhat-gas-reporter
 gasReporter: {
     enabled: false
   }
+
+# ABI导出
+
+```
+abiExporter: {
+    path: './abi', // ABI导出目录的路径（相对于Hardhat根目录）
+    runOnCompile: true, // 是否在编译时自动导出ABI
+    clear: true, // 是否在编译时清除旧的ABI文件
+    flat: false, // 是否将输出目录扁平化（可能会造成命名冲突）
+    only: [], // 选择包含的合约数组
+    except: [], // 排除的合约数组
+    spacing: 2, // 格式化输出的缩进空格数
+    pretty: true // 是否使用接口风格的格式化输出
+},
+```
 
 # 覆盖率查询
 
