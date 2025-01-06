@@ -1,3 +1,8 @@
+# 目录
+
+[Gas优化](./GasOptimize/)
+[Solidity安全开发实战](./security/)
+
 [Solidity官方文档](https://docs.soliditylang.org/)
 
 [Solidity中文官方文档](https://learnblockchain.cn/docs/solidity/0.8.17/introduction-to-smart-contracts.html)
@@ -24,9 +29,15 @@ https://www.bilibili.com/video/BV1RS4y1F7zw/?spm_id_from=333.337.search-card.all
 
 # 工作信息
 
-[Rebase社区](https://github.com/rebase-network/who-is-hiring)
+1. [Rebase社区](https://github.com/rebase-network/who-is-hiring)
+2. https://antcave.club/
+3. 去项目放官网，比如Dune
+4. telegram上有两个频道，远程工作者，abetterweb3招聘
+  a. https://t.me/remote_cn 
+  b. https://t.me/abetterweb3_cn
+5. [V2EX](https://www.v2ex.com/)
+6. [Dejob](https://www.dejob.top/job)
 
-https://antcave.club/
 
 # 工具
 
