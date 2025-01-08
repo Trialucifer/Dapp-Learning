@@ -26,12 +26,15 @@ https://www.bilibili.com/video/BV1RS4y1F7zw/?spm_id_from=333.337.search-card.all
 [Rebase大学](https://space.bilibili.com/382886213)
 [实战记录课程](https://www.bilibili.com/video/BV12h4y1o7kk/?spm_id_from=333.337.search-card.all.click&vd_source=35e66fb56cf7f295e7d1d550f772c64d)
 
+# 水龙头
+
+https://faucets.chain.link/
 
 # 工作信息
 
 1. [Rebase社区](https://github.com/rebase-network/who-is-hiring)
 2. https://antcave.club/
-3. 去项目放官网，比如Dune
+3. 去项目放官网，比如Dune，
 4. telegram上有两个频道，远程工作者，abetterweb3招聘
   a. https://t.me/remote_cn 
   b. https://t.me/abetterweb3_cn

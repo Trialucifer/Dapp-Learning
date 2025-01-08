@@ -45,6 +45,8 @@ npx env-enc set-pw
 922953zbc
 给变量名加密
 npx env-enc set
+查看变量信息
+npx evn-enc view
 
 hardhat.config.js 文件添加 
 > require("@chainlink/env-enc").config();
