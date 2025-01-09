@@ -10,6 +10,7 @@ require("@nomicfoundation/hardhat-verify");
 const { ProxyAgent, setGlobalDispatcher } = require("undici");
 //配置ABI导出 npm install --save-dev hardhat-abi-exporter
 require('hardhat-abi-exporter');
+require("./task")
 
 const proxyAgent = new ProxyAgent("http://127.0.0.1:7890");//查看自己的代理 修改端口
 setGlobalDispatcher(proxyAgent);
@@ -35,13 +36,19 @@ module.exports = {
      //acounts 钱包私钥
      accounts: [PRIVATE_TEST_KEY1],
      chainId: 11155111,
-     blockConfirmations: 6 //交易发送后，经历多少个区块才算成功
+     blockConfirmations: 6, //交易发送后，经历多少个区块才算成功
+     companionNetworks: {
+       destChain: "amoy"
+     }
    },
    amoy: {
     url: AMOY_TEST_URL,
     accounts: [PRIVATE_TEST_KEY1],
     chainId: 80002,
-    blockConfirmations: 6
+    blockConfirmations: 6,
+    companionNetworks: {
+      destChain: "sepolia"
+    }
    }
  },
  etherscan: {

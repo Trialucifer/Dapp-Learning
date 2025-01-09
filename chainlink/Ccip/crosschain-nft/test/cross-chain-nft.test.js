@@ -7,7 +7,7 @@ let nft
 let nftPoolLockAndRelease
 let wnft
 let nftPoolBurnAndMint
-let chainSelector
+let destChainSelector
 
 before(async function () {
     firstAccount = (await getNamedAccounts()).firstAccount;
@@ -17,7 +17,7 @@ before(async function () {
     nftPoolLockAndRelease = await ethers.getContract("NFTPoolLockAndRelease", firstAccount)
     wnft = await ethers.getContract("WrappedMyToken", firstAccount)
     nftPoolBurnAndMint = await ethers.getContract("NFTPoolBurnAndMint", firstAccount)
-    chainSelector = (await ccipSimulator.configuration()).chainSelector_
+    destChainSelector = (await ccipSimulator.configuration()).chainSelector_
 })
 
 describe("source chain -> dest chain test", async function () {
@@ -34,7 +34,7 @@ describe("test if the nft can be locked and transferred to destchain",
             await nft.approve(nftPoolLockAndRelease.target, 0)
             //mock合约给 nftPoolLockAndRelease 10 link
             await ccipSimulator.requestLinkFromFaucet(nftPoolLockAndRelease.target, ethers.parseEther("10"))
-            await nftPoolLockAndRelease.lockAndSendNFT(0, firstAccount, chainSelector, nftPoolBurnAndMint.target)
+            await nftPoolLockAndRelease.lockAndSendNFT(0, firstAccount, destChainSelector, nftPoolBurnAndMint.target)
             //check if owner of ntf is pool's address
             const newOwner = await nft.ownerOf(0)
             expect(newOwner).to.equal(nftPoolLockAndRelease.target)
@@ -52,7 +52,7 @@ describe("test if the nft can be burned and transferred back to sourcechain",
         it("wnft can be burn", async function () {
             await ccipSimulator.requestLinkFromFaucet(nftPoolBurnAndMint.target, ethers.parseEther("10"))
             await wnft.approve(nftPoolBurnAndMint.target, 0)
-            await nftPoolBurnAndMint.burnAndSendNFT(0, firstAccount, chainSelector, nftPoolLockAndRelease.target)
+            await nftPoolBurnAndMint.burnAndSendNFT(0, firstAccount, destChainSelector, nftPoolLockAndRelease.target)
             const wnftTotalSupply = await wnft.totalSupply()
             expect(wnftTotalSupply).to.equal(0)
         })
